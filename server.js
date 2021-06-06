@@ -1,5 +1,5 @@
 const express = require('express')
-// const connectDB = require('./config/db')
+require('dotenv').config()
 const mongoose = require('mongoose')
 
 const app = express()
@@ -7,15 +7,12 @@ const app = express()
 // Connect Database
 const connectDB = async () => {
     try {
-        await mongoose.connect(
-            'mongodb+srv://123:1234@cluster0.0ol02.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-            {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                useCreateIndex: true,
-                useFindAndModify: false,
-            }
-        )
+        await mongoose.connect(process.env.DB_CONN, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+            useFindAndModify: false,
+        })
         console.log('MongoDB Connected...')
     } catch (err) {
         console.error(err.message)
