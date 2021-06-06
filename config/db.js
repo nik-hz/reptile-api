@@ -1,19 +1,17 @@
 const mongoose = require('mongoose')
+require('dotenv').process()
 // const config = require('config')
 
 // const db = config.get('mongoURI')
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(
-            'mongodb+srv://123:1234@dcluster0.0ol02.mongodb.net/snakes?retryWrites=true&w=majority',
-            {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                useCreateIndex: true,
-                useFindAndModify: false,
-            }
-        )
+        await mongoose.connect(process.env.DB_CONN, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+            useFindAndModify: false,
+        })
         console.log('MongoDB Connected...')
     } catch (err) {
         console.error(err.message)
