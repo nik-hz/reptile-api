@@ -1,0 +1,17 @@
+{
+    "name": "reptile api",
+    "description": "api with all reptiles",
+    "repository": "https://github.com/nik-hz/reptile-api",
+    "keywords": [
+        "node",
+        "express",
+        "angular",
+        "MEAN",
+        "mongodb",
+        "REST",
+        "API"
+    ],
+    "addons": [
+        "mongolab"
+    ]
+}
