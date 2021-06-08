@@ -29,10 +29,7 @@ app.use(express.json({ extended: false }))
 app.get('/', (req, res) => res.send('API up'))
 
 // Define Routes
-app.use('/api/snakes', require('./routes/snakes'))
-// app.use('/api/auth', require('./routes/api/auth'))
-// app.use('/api/profile', require('./routes/api/profile'))
-// app.use('/api/posts', require('./routes/api/posts'))
+app.use('/api/reptiles', require('./routes/reptiles'))
 
 const PORT = process.env.PORT || 5000
 

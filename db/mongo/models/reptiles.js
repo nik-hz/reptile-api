@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = require('mongoose')
 
-const snakeSchema = new Schema({
+const reptileSchema = new Schema({
     type_species: {
         type: String,
         required: false,
@@ -36,13 +36,6 @@ const snakeSchema = new Schema({
     },
 })
 
-// farmSchema.post('findOneAndDelete', async function (farm) {
-//     if (farm.products.length) {
-//         const res = await Product.deleteMany({ _id: { $in: farm.products } })
-//         console.log(res)
-//     }
-// })
+const Reptile = mongoose.model('Reptile', reptileSchema)
 
-const Snake = mongoose.model('Snake', snakeSchema)
-
-module.exports = Snake
+module.exports = Reptile
