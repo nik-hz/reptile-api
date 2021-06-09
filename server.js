@@ -26,7 +26,7 @@ connectDB()
 // Init Middleware
 app.use(express.json({ extended: false }))
 
-app.get('/', (req, res) => res.send('API up hello there'))
+app.get('/', (req, res) => res.send('TESTING AUTOMATIC DEPLOY FUNCTINALITY'))
 
 // Define Routes
 app.use('/api/reptiles', require('./routes/reptiles'))
