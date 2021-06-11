@@ -1,4 +1,5 @@
 const express = require('express')
+const { allow } = require('joi')
 require('dotenv').config()
 const mongoose = require('mongoose')
 
@@ -29,6 +30,24 @@ app.use(express.json({ extended: false }))
 app.get('/', (req, res) =>
     res.send('APi up, automatically deploys from origin/deploy')
 )
+
+const allowCrossDomain = (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Methods', 'GET')
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Content-Type, Authorization, Content-Length, X-Requested-With'
+    )
+
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+        res.send(200)
+    } else {
+        next()
+    }
+}
+
+app.use(allowCrossDomain)
 
 // Define Routes
 app.use('/api/reptiles', require('./routes/reptiles'))
