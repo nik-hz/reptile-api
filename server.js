@@ -28,7 +28,9 @@ connectDB()
 app.use(express.json({ extended: false }))
 
 app.get('/', (req, res) =>
-    res.send('APi up, automatically deploys from origin/deploy')
+    res.send(
+        'APi up, automatically deploys from origin/deploy, head to https://reptileapi.herokuapp.com/'
+    )
 )
 
 const allowCrossDomain = (req, res, next) => {
