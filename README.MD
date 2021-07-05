@@ -1,7 +1,12 @@
-# REPTILE API
+# REPTILE API DOCS
 
-this is a demo api which will return data on a random reptile as a JSON object.
+api is free to use, you can only send GET requests to this link
 
-API is GET only
+```
+'https://reptile-api.herokuapp.com/api/reptiles/get_one'
 
-use this through the react app
+```
+
+I'm not expecting anyone to actually use this but don't overload the api pls or I'll add auth
+
+use this on the react app
